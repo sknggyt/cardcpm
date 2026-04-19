@@ -423,7 +423,10 @@
         #page-cc .tab.ac{background:var(--cc-ac-d);border-color:var(--cc-red);color:var(--cc-red);}
         #page-cc .tab.ag{background:rgba(255,112,112,.08);border-color:#ff7070;color:#ff7070;}
 
-        #page-cc .btn{width:100%;padding:14px;margin-bottom:10px;background:var(--cc-red);border:none;border-radius:10px;color:#fff;font-family:'DM Sans',sans-serif;font-size:14px;font-weight:700;cursor:pointer;transition:all .15s;display:none;letter-spacing:.3px;}
+        #page-cc .btn{width:100%;padding:14px;margin-bottom:10px;background:linear-gradient(135deg,#e03535,#b02020);border:none;border-radius:10px;color:#fff;font-family:'DM Sans',sans-serif;font-size:15px;font-weight:700;cursor:pointer;transition:all .18s;display:none;letter-spacing:.5px;box-shadow:0 4px 18px rgba(224,53,53,.3);}
+        #page-cc .btn.visible{display:block;}
+        #page-cc .btn:hover{filter:brightness(1.12);transform:translateY(-2px);box-shadow:0 6px 22px rgba(224,53,53,.4);}
+        #page-cc .btn:active{transform:translateY(0);}
         #page-cc .btn:hover{filter:brightness(1.08);transform:translateY(-1px);}
         #page-cc .btn.show{display:block;}
 
@@ -1326,7 +1329,9 @@
         });
 
         mSel.addEventListener('change', () => {
-            optCard.style.display = mSel.value ? 'block' : 'none';
+            const hasModel = !!mSel.value;
+            optCard.style.display = hasModel ? 'block' : 'none';
+            btnGen.classList.toggle('visible', hasModel);
             resCard.classList.remove('show');
         });
 
